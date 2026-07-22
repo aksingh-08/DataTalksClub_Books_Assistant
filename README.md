@@ -24,13 +24,14 @@ The project will focus on building a complete RAG pipeline, including data inges
 - Multi-Agent Workflow
 
 ## Technology Stack
-**Component**                                     **Technology**
-LLM                                           GitHub Models (openai/gpt-5)
-Embedding Model                               Sentence Transformers (local)
-Vector Database                               Qdrant or Chroma
-Data Ingestion                                dlt
-Backend                                       Python
-Interface                                     Streamlit
-Monitoring                                    OpenTelemetry + Grafana
-Evaluation                                    Retrieval Metrics + GPT-5 Judge (limited set)
-Feedback Storage                              SQLite
+**Component**                  |                   **Technology**
+-------------------------------|-------------------------------------------
+LLM                            |               GitHub Models (openai/gpt-5)
+Embedding Model                |               Sentence Transformers (local)
+Vector Database                |               Qdrant or Chroma
+Data Ingestion                 |               dlt
+Backend                        |               Python
+Interface                      |               Streamlit
+Monitoring                     |               OpenTelemetry + Grafana
+Evaluation                     |               Retrieval Metrics + GPT-5 Judge (limited set)
+Feedback Storage               |               SQLite
