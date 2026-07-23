@@ -5,7 +5,7 @@ The project will focus on building a complete RAG pipeline, including data inges
 
 **Future Scope:** Extend the application into an agentic assistant with external tools and planning capabilities.
 
-## Scope
+### Scope
 - RAG Pipeline
 - Semantic Search
 - Book Recommendation
