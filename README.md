@@ -16,7 +16,7 @@ The project will focus on building a complete RAG pipeline, including data inges
 - Feedback Collection
 - Streamlit UI
 
-## Future Work
+### Future Work
 - Agent Framework
 - Toll Calling
 - Web Search
