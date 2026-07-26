@@ -1,0 +1,15 @@
+[project]
+name = "datatalksclub-books-assistant"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dlt[duckdb]>=1.29.1",
+    "python-frontmatter>=1.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+]
