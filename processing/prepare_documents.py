@@ -1,7 +1,25 @@
 from pathlib import Path
 import duckdb
+import json 
 
 DB_PATH = Path('books_pipeline.duckdb')
+OUTPUT_PATH = Path('data/processed/retrieval_documents.json')
+
+def save_documents(documents):
+    OUTPUT_PATH.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+    with OUTPUT_PATH.open(
+        'w',
+        encoding='utf-8'
+    ) as f:
+        json.dump(
+            documents,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
 
 def get_connection():
     return duckdb.connect(str(DB_PATH), read_only=True)
@@ -128,5 +146,7 @@ if __name__ == '__main__':
     print(f'Book documents: {book_count}')
     print(f'Discussion documents: {discussion_count}')
     print(f'Total documents: {len(documents)}')
-    print('\nExample document:\n')
-    print(documents[98]['search_text'])
+    save_documents(documents)
+    print(f'\nSaved to: {OUTPUT_PATH}')
+    # print('\nExample document:\n')
+    # print(documents[98]['search_text'])
