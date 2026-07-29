@@ -4,6 +4,8 @@ from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from retrieval.base import BaseRetriever
+
 DOCUMENTS_PATH = Path(
     'data/processed/retrieval_documents.json'
 )
@@ -31,6 +33,27 @@ def search(documents, vectorizer, document_vectors, query, num_results=5):
         result['score'] = float(scores[index])
         results.append(result)
     return results
+
+
+class TFIDFRetriever(BaseRetriever):
+
+    def __init__(self):
+        self.documents = load_documents()
+
+        (
+            self.vectorizer,
+            self.document_vectors,
+        ) = build_index(self.documents)
+
+    def search(self, query: str, top_k: int):
+        return search(
+            self.documents,
+            self.vectorizer,
+            self.document_vectors,
+            query,
+            top_k,
+        )
+
 
 if __name__ == '__main__':
     documents = load_documents()
