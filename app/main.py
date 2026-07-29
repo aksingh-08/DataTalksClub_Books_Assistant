@@ -1,6 +1,13 @@
 import streamlit as st
 
+from monitoring.database import initialize_database
+from monitoring.conversation import save_conversation
+from monitoring.schema import ConversationLog
+
+from app.feedback_component import render_feedback
+
 from rag.pipeline import RAGPipeline
+
 from app.components import (
     show_answer,
     show_metadata,
@@ -17,9 +24,11 @@ st.set_page_config(
     layout='wide'
 )
 load_css()
+initialize_database()
 initialize_session()
 render_sidebar()
 rag = RAGPipeline()
+
 st.title('DataTalksClub Books Assistant')
 st.write(
     'Ask questions about the'
@@ -34,6 +43,8 @@ for message in st.session_state.messages:
         result = message['result']
         with st.chat_message('assistant'):
             show_answer(result)
+            if hasattr(result, 'conversation_id'):
+                render_feedback(result.conversation_id)
             with st.expander('Details'):
                 show_sources(result)
                 st.divider()
@@ -43,24 +54,7 @@ for message in st.session_state.messages:
 
 question = st.chat_input(
     'Ask about the DataTalksClub books...',
-    # placeholder='e.g. What is Data Engineering?',
 )
-
-# if st.button('Ask'):
-#     if question.strip():
-#         with st.spinner('Searching books...'):
-#             result = rag.ask(question)
-#         st.session_state.current_response = result
-#         st.session_state.history.append(result)
-#     if st.session_state.current_response:
-#         result = st.session_state.current_response
-#         show_answer(result)
-#         st.divider()
-#         show_sources(result)
-#         st.divider()
-#         show_metadata(result)
-#         st.divider()
-#         show_retrieved_documents(result)
 
 if question:
     st.session_state.messages.append(
@@ -74,7 +68,22 @@ if question:
     with st.chat_message('assistant'):
         with st.spinner('Searching books...'):
             result = rag.ask(question)
+        conversation_id = save_conversation(
+            ConversationLog(
+                question=result.question,
+                answer=result.answer,
+                model=result.model,
+                retriever=result.retriever,
+                sources=result.sources,
+                prompt_tokens=result.prompt_tokens,
+                completion_tokens=result.completion_tokens,
+                total_tokens=result.total_tokens,
+                response_time=result.response_time,
+            )
+        )
+        result.conversation_id = conversation_id
         show_answer(result)
+        render_feedback(result.conversation_id)
         with st.expander('Details'):
             show_sources(result)
             st.divider()
