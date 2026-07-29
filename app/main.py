@@ -25,24 +25,65 @@ st.write(
     'Ask questions about the'
     'DataTalksClub Book of the Week archive.'
 )
-question = st.text_input(
-    'Question',
-    placeholder='How can i become a machine learning engineer?',
+
+for message in st.session_state.messages:
+    if message['role'] == 'user':
+        with st.chat_message('user'):
+            st.write(message['content'])
+    else:
+        result = message['result']
+        with st.chat_message('assistant'):
+            show_answer(result)
+            with st.expander('Details'):
+                show_sources(result)
+                st.divider()
+                show_metadata(result)
+                st.divider()
+                show_retrieved_documents(result)
+
+question = st.chat_input(
+    'Ask about the DataTalksClub books...',
+    # placeholder='e.g. What is Data Engineering?',
 )
 
-if st.button('Ask'):
-    if question.strip():
+# if st.button('Ask'):
+#     if question.strip():
+#         with st.spinner('Searching books...'):
+#             result = rag.ask(question)
+#         st.session_state.current_response = result
+#         st.session_state.history.append(result)
+#     if st.session_state.current_response:
+#         result = st.session_state.current_response
+#         show_answer(result)
+#         st.divider()
+#         show_sources(result)
+#         st.divider()
+#         show_metadata(result)
+#         st.divider()
+#         show_retrieved_documents(result)
+
+if question:
+    st.session_state.messages.append(
+        {
+            'role': 'user',
+            'content': question
+        }
+    )
+    with st.chat_message('user'):
+        st.write(question)
+    with st.chat_message('assistant'):
         with st.spinner('Searching books...'):
             result = rag.ask(question)
-        st.sessino_state.current_response = result
-        st.session_state.history.append(result)
-    if st.session_state.current_response:
-        result = st.session_state.current_response
         show_answer(result)
-        st.divider()
-        show_sources(result)
-        st.divider()
-        show_metadata(result)
-        st.divider()
-        show_retrieved_documents(result)
-        
+        with st.expander('Details'):
+            show_sources(result)
+            st.divider()
+            show_metadata(result)
+            st.divider()
+            show_retrieved_documents(result)
+    st.session_state.messages.append(
+        {
+            'role': 'assistant',
+            'result': result
+        }
+    )
