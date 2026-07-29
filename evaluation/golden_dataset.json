@@ -1,0 +1,37 @@
+[
+    {
+        "question": "What is Data Engineering?",
+        "expected_answer": "Data Engineering focuses on designing and building data pipelines.",
+        "expected_sources": [
+            "Fundamentals of Data Engineering"
+        ]
+    },
+    {
+        "question": "Who wrote Designing Machine Learning Systems?",
+        "expected_answer": "Chip Huyen",
+        "expected_sources": [
+            "Designing Machine Learning Systems"
+        ]
+    },
+    {
+        "question": "What is MLOps?",
+        "expected_answer": "MLOps is the practice of deploying and maintaining machine learning systems in production.",
+        "expected_sources": [
+            "Designing Machine Learning Systems"
+        ]
+    },
+    {
+        "question": "What is Feature Engineering?",
+        "expected_answer": "Feature Engineering is the process of creating useful input features for machine learning models.",
+        "expected_sources": [
+            "Feature Engineering Book Camp"
+        ]
+    },
+    {
+        "question": "What is Data Storytelling?",
+        "expected_answer": "Data Storytelling combines data, visualization, and narrative to communicate insights.",
+        "expected_sources": [
+            "Data Storytelling with Altair and AI"
+        ]
+    }
+]
