@@ -1,13 +1,14 @@
 import streamlit as st
 
 def show_answer(result):
-    st.subheader('Answer')
-    st.write(result.answer)
+    with st.container(border=True):
+        st.subheader('Answer')
+        st.write(result.answer)
 
 def show_sources(result):
     st.subheader('Books Used')
     for source in result.sources:
-        st.success(source)
+        st.write(f"• {source} ")
 
 def show_metadata(result):
     st.subheader('Metadata')
@@ -36,9 +37,8 @@ def show_metadata(result):
 def show_retrieved_documents(result):
     with st.expander('Retrieved Documents'):
         for doc in result.documents:
-            st.markdown(
-                f'## {doc['book_title']}'
-            )
-            st.write(doc['content'])
+            st.subheader(doc['book_title'])
+            with st.expander('View full document'):
+                st.write(doc['search_text'])
             st.divider()
             
