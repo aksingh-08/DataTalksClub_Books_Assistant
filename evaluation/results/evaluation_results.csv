@@ -1,0 +1,50 @@
+question,expected_answer,generated_answer,expected_sources,retrieved_sources,precision,recall,f1,exact_match,judge,response_time,prompt_tokens,completion_tokens,total_tokens
+What is Data Engineering?,Data Engineering focuses on designing and building data pipelines.,"Data engineering is a practice that has grown rapidly in the past decade. It involves planning and building systems to serve the needs of an organization and its customers. The data engineering lifecycle includes concepts such as:
+* Data generation
+* Ingestion
+* Orchestration
+* Transformation
+* Storage
+* Governance
+
+These concepts are critical in any data environment, regardless of the underlying technology. 
+
+Books used: Fundamentals of Data Engineering by Joe Reis and Matthew Housley.",['Fundamentals of Data Engineering'],['Fundamentals of Data Engineering'],1.0,1.0,1.0,False,Correct,1.2800769000023138,882,98,980
+Who wrote Designing Machine Learning Systems?,Chip Huyen,"I don't know based on the provided documents.
+
+The book ""Designing Machine Learning Systems"" is mentioned, but the author is not specified. The reply is from Chip Huyen, but it is not indicated that Chip Huyen is the author of the book.
+
+Books used: 
+* Grokking Machine Learning
+* Designing Machine Learning Systems
+* Managing Machine Learning Projects
+* Mastering Machine Learning Algorithms - Second Edition",['Designing Machine Learning Systems'],"['Grokking Machine Learning', 'Designing Machine Learning Systems', 'Managing Machine Learning Projects', 'Mastering Machine Learning Algorithms - Second Edition']",0.25,1.0,0.4,False,Incorrect,0.45341129999724217,575,87,662
+What is MLOps?,MLOps is the practice of deploying and maintaining machine learning systems in production.,"MLOps is not explicitly defined in the provided context. However, based on the discussions, it can be inferred that MLOps involves:
+* Setting up and monitoring infrastructure and operations for ML models
+* Designing ""data intensive applications""
+* Enabling ML in production, which goes beyond just ML algorithms
+* A specialization of operations teams, potentially related to DataOps
+
+Books used: 
+* Practical MLOps
+* Engineering MLOps
+* Data Teams",['Designing Machine Learning Systems'],"['Practical MLOps', 'Engineering MLOps', 'Data Teams']",0.0,0.0,0.0,False,Partially Correct,0.6707259000104386,652,96,748
+What is Feature Engineering?,Feature Engineering is the process of creating useful input features for machine learning models.,"Feature engineering is the process of developing and enriching machine learning models. It involves transforming features from unstructured datasets, selecting the best features, and extracting techniques. 
+
+Key aspects of feature engineering include:
+* Working with continuous and discrete datasets
+* Transforming features from unstructured datasets
+* Selecting the best features and extraction techniques
+* Using techniques such as box-cox transform, power transform, and log transform
+
+Book used: Python Feature Engineering Cookbook",['Feature Engineering Book Camp'],['Python Feature Engineering Cookbook'],0.0,0.0,0.0,False,Partially Correct,0.4963424000015948,911,92,1003
+What is Data Storytelling?,"Data Storytelling combines data, visualization, and narrative to communicate insights.","Based on the provided context, data storytelling involves:
+* Building enhanced data visualizations using tools like Altair and AI
+* Creating powerful narratives that can inform, inspire, and motivate
+* Using hands-on examples to build data stories
+* Understanding the WHO, WHAT, and HOW of the storytelling process, including:
+  * Understanding the audience (WHO)
+  * Having a clear, focused, relevant message (WHAT)
+  * Effectively using charts and other visualization tools (HOW)
+
+Books used: Business Skills for Data Scientists, Data Storytelling with Altair and AI, Driving Data Quality with Data Contracts",['Data Storytelling with Altair and AI'],"['Business Skills for Data Scientists', 'Data Storytelling with Altair and AI', 'Driving Data Quality with Data Contracts']",0.3333333333333333,1.0,0.5,False,Correct,0.4745141000021249,865,123,988
