@@ -1,11 +1,11 @@
 from dataclasses import dataclass
-from typing import Any
+# from typing import Any
 
 @dataclass
 class RAGResponse:
     question: str
     answer: str
-    documents: list[dict[str, Any]]
+    documents: list[str]
     sources: list[str]
     prompt: str
     model: str
@@ -14,3 +14,4 @@ class RAGResponse:
     prompt_tokens: int
     completion_tokens: int
     total_tokens: int
+    conversation_id: int | None = None
