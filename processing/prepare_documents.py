@@ -49,6 +49,7 @@ def prepare_book_documents(conn):
             'book_id': book_id,
             'book_title': title,
             'source_file': source_file,
+            'question': '',
             'search_text': search_text,
         })
     return documents
@@ -118,6 +119,7 @@ def prepare_discussion_documents(conn):
             'book_id': book_id,
             'book_title': book_title,
             'question_author': question_author,
+            'question': question or '',
             'reply_count': len(replies),
             'has_replies': len(replies) > 0,
             'search_text': search_text,
