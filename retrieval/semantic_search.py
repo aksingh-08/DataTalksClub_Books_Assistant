@@ -4,6 +4,8 @@ from pathlib import Path
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+from retrieval.base import BaseRetriever
+
 DOCUMENTS_PATH = Path('data/processed/retrieval_documents.json')
 MODEL_NAME = 'sentence-transformers/all-MiniLM-L6-v2'
 EMBEDDINGS_PATH = Path('embeddings/document_embeddings.npy')
@@ -70,6 +72,28 @@ def get_embeddings(model, documents):
         save_embeddings(embeddings)
         print(f'Embeddings saved to: {EMBEDDINGS_PATH}')
     return embeddings
+
+
+
+class SemanticRetriever(BaseRetriever):
+
+    def __init__(self):
+        self.documents = load_documents()
+        self.model = load_model()
+        self.document_embeddings = get_embeddings(
+            self.model,
+            self.documents,
+        )
+
+    def search(self, query: str, top_k: int):
+        return search(
+            self.model,
+            self.documents,
+            self.document_embeddings,
+            query,
+            top_k,
+        )
+
 
 if __name__ == '__main__':
     documents = load_documents()
