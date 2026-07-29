@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 from minsearch import Index
 
+from retrieval.base import BaseRetriever
+
 DOCUMENTS_PATH = Path(
     'data/processed/retrieval_documents.json'
 )
@@ -16,8 +18,9 @@ def load_documents():
 def build_index(documents):
     index = Index(
         text_fields=[
-            'search_text',
+            'question',
             'book_title',
+            'search_text'
         ],
         keyword_fields=[
             'document_id',
@@ -39,6 +42,21 @@ def search(index, query, num_results=5):
         boost_dict=boost,
         num_results=num_results,
     )
+
+
+class TextSearchRetriever(BaseRetriever):
+
+    def __init__(self):
+        self.documents = load_documents()
+        self.index = build_index(self.documents)
+
+    def search(self, query: str, top_k: int):
+        return search(
+            self.index,
+            query,
+            top_k,
+        )
+
 
 if __name__ == '__main__':
     documents = load_documents()
