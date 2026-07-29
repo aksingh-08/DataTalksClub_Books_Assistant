@@ -1,5 +1,6 @@
-MODEL_NAME = 'gpt-5'
-BASE_URL = "https://models.inference.ai.azure.com"
+# MODEL_NAME = 'gpt-5'
+MODEL_NAME = 'llama-3.3-70b-versatile'
+# BASE_URL = "https://models.inference.ai.azure.com"
 SEARCH_METHOD = 'semantic'
 TOP_K = 5
 MAX_COMPLETION_TOKENS = 300
