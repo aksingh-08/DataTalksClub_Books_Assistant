@@ -27,3 +27,5 @@ Thumbs.db
 
 #folder and files
 embeddings
+monitoring.db
+books_pipeline.duckdb
