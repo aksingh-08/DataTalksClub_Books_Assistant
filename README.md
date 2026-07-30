@@ -1,4 +1,14 @@
 # DataTalksClub_Books_Assistant
+
+![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
+![RAG](https://img.shields.io/badge/RAG-Application-success?style=for-the-badge)
+![Groq](https://img.shields.io/badge/LLM-Groq-orange?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/UI-Streamlit-red?style=for-the-badge&logo=streamlit)
+![Sentence Transformers](https://img.shields.io/badge/Embeddings-SentenceTransformers-green?style=for-the-badge)
+![DuckDB](https://img.shields.io/badge/Database-DuckDB-yellow?style=for-the-badge)
+![DLT](https://img.shields.io/badge/Ingestion-dlt-purple?style=for-the-badge)
+
+
 An end-to-end RAG application for discovering, exploring, and asking questions about books featured in the DataTalksClub Book of the Week archive.
 
 The project will focus on building a complete RAG pipeline, including data ingestion, document processing, retrieval, evaluation, monitoring, and a user-friendly interface.
