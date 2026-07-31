@@ -1,5 +1,6 @@
 # DataTalksClub_Books_Assistant
 <p align='center'>
+
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
 ![RAG](https://img.shields.io/badge/RAG-Application-success?style=for-the-badge)
 ![Groq](https://img.shields.io/badge/LLM-Groq-orange?style=for-the-badge)
