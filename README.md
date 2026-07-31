@@ -1,4 +1,5 @@
 # DataTalksClub_Books_Assistant
+
 <p align='center'>
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
@@ -10,6 +11,10 @@
 ![DLT](https://img.shields.io/badge/Ingestion-dlt-purple?style=for-the-badge)
 
 </p>
+
+---
+
+[streamlit-main-2026-07-31-15-05-13.webm](https://github.com/user-attachments/assets/847c4dc3-632a-45eb-82bc-f123ef3ed3a1)
 
 ---
 
