@@ -1,5 +1,6 @@
 # DataTalksClub_Books_Assistant
 
+
 <p align='center'>
 
 ![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
@@ -9,12 +10,28 @@
 ![Sentence Transformers](https://img.shields.io/badge/Embeddings-SentenceTransformers-green?style=for-the-badge)
 ![DuckDB](https://img.shields.io/badge/Database-DuckDB-yellow?style=for-the-badge)
 ![DLT](https://img.shields.io/badge/Ingestion-dlt-purple?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Render](https://img.shields.io/badge/Deployment-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
 
 </p>
 
+<!-----
+
+[streamlit-main-2026-07-31-15-05-13.webm](https://github.com/user-attachments/assets/847c4dc3-632a-45eb-82bc-f123ef3ed3a1)-->
+
 ---
 
-[streamlit-main-2026-07-31-15-05-13.webm](https://github.com/user-attachments/assets/847c4dc3-632a-45eb-82bc-f123ef3ed3a1)
+## Live Demo
+
+Try the application without any installation:
+
+https://datatalksclub-books-assistant.onrender.com
+
+Exmample Questions:
+- What is Data Engineering?
+- Recommend books for learning MLOps.
+- Compare Machine Learning books.
+- Which books explain Feature Engineering?
 
 ---
 
@@ -213,6 +230,7 @@ Collected feedback helps identify:
 | Evaluation | Custom Metrics + LLM Judge |
 | Dashboard | Streamlit |
 | Package Management | uv |
+| Deployment | Render |
 
 ---
 
@@ -1575,7 +1593,11 @@ This structure separates concerns, making the project easier to understand, main
 
 # Installation
 
-## Prerequisites
+## Prerequisites [ Try Online ]
+
+https://datatalksclub-books-assistant.onrender.com
+
+## Prerequisites [ Locally ]
 
 Before running the project, ensure you have:
 
@@ -1705,6 +1727,23 @@ pytest
 ```
 
 if additional automated tests are added in the future.
+
+## Prerequisites [ Run using Docker ]
+
+Build
+
+```bash
+docker build -t datatalksclub-books-assistant .
+```
+
+Run
+
+```bash
+docker run \
+-p 8501:8501 \
+--env-file .env \
+datatalksclub-books-assistant
+```
 
 ---
 
