@@ -11,17 +11,17 @@
 ![DuckDB](https://img.shields.io/badge/Database-DuckDB-yellow?style=for-the-badge)
 ![DLT](https://img.shields.io/badge/Ingestion-dlt-purple?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Container-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Render](https://img.shields.io/badge/Deployment-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)
+<!--![Render](https://img.shields.io/badge/Deployment-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)-->
 
 </p>
 
-<!-----
+---
 
-[streamlit-main-2026-07-31-15-05-13.webm](https://github.com/user-attachments/assets/847c4dc3-632a-45eb-82bc-f123ef3ed3a1)-->
+[streamlit-main-2026-07-31-15-05-13.webm](https://github.com/user-attachments/assets/847c4dc3-632a-45eb-82bc-f123ef3ed3a1)
 
 ---
 
-## Live Demo
+<!--## Live Demo
 
 Try the application without any installation:
 
@@ -33,7 +33,7 @@ Exmample Questions:
 - Compare Machine Learning books.
 - Which books explain Feature Engineering?
 
----
+----->
 
 # Project Overview
 
@@ -230,7 +230,7 @@ Collected feedback helps identify:
 | Evaluation | Custom Metrics + LLM Judge |
 | Dashboard | Streamlit |
 | Package Management | uv |
-| Deployment | Render |
+<!--| Deployment | Render |-->
 
 ---
 
@@ -1593,9 +1593,9 @@ This structure separates concerns, making the project easier to understand, main
 
 # Installation
 
-## Prerequisites [ Try Online ]
+<!--## Prerequisites [ Try Online ]
 
-https://datatalksclub-books-assistant.onrender.com
+https://datatalksclub-books-assistant.onrender.com-->
 
 ## Prerequisites [ Locally ]
 
